@@ -2283,6 +2283,35 @@ class PlayState extends MusicBeatState
 
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
+	}else if (SONG.song.toLowerCase() == 'the-end') {
+			gfSpeed = 2;
+		}//else if (SONG.song.toLowerCase() == "termination") {
+			/*
+			qt_tv01.animation.play("instructions");
+			FlxG.camera.shake(0.003,1);
+			camHUD.shake(0.003,1);
+			if(ClientPrefs.downScroll){
+				strumLineNotes.members[0].y-20;
+				strumLineNotes.members[7].y-20;
+			}else{
+				strumLineNotes.members[0].y+20;
+				strumLineNotes.members[7].y+20;
+			}
+			FlxTween.tween(strumLineNotes.members[0], {y: hazardModChartDefaultStrumY[0], alpha: 1}, 1.22, {ease: FlxEase.cubeOut});
+			FlxTween.tween(strumLineNotes.members[7], {y: hazardModChartDefaultStrumY[7], alpha: 1}, 1.22, {ease: FlxEase.cubeOut});
+			*/
+			//bfCanDodge = true;
+		//}
+
+		if(SONG.dodgeEnabled)
+			bfCanDodge = true;
+
+		
+
+		startingSong = false;
+
+		previousFrameTime = FlxG.game.ticks;
+		lastReportedPlayheadPosition = 0;
 
 		//Use this path for classic termination
 		if(Paths.formatToSongPath(SONG.song) == 'termination' && storyDifficulty==2){
